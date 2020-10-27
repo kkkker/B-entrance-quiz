@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -24,5 +26,13 @@ public class StudentSystemController {
     @GetMapping("/groups")
     public ResponseEntity<List<StudentGroup>> getAllStudentGroups() {
         return ResponseEntity.ok().body(studentSystemService.getAllStudentGroups());
+    }
+
+    @PostMapping("/student")
+    public ResponseEntity<Object> addStudent(@RequestParam String name) {
+        if (studentSystemService.addStudent(name)) {
+            return ResponseEntity.ok().body(null);
+        }
+        return ResponseEntity.badRequest().body(null);
     }
 }

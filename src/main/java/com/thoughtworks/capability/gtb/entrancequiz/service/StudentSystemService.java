@@ -58,4 +58,10 @@ public class StudentSystemService {
         }
         return studentGroups;
     }
+
+    public boolean addStudent(String name) {
+        Student student = new Student(studentsDataBase.get(studentsDataBase.size() - 1).getId() + 1, name);
+        studentsDataBase.add(student);
+        return true;
+    }
 }
