@@ -1,6 +1,7 @@
 package com.thoughtworks.capability.gtb.entrancequiz.controller;
 
 import com.thoughtworks.capability.gtb.entrancequiz.dto.Student;
+import com.thoughtworks.capability.gtb.entrancequiz.dto.StudentGroup;
 import com.thoughtworks.capability.gtb.entrancequiz.service.StudentSystemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,5 +19,10 @@ public class StudentSystemController {
     @GetMapping("/students")
     public ResponseEntity<List<Student>> getAllStudents() {
         return ResponseEntity.ok().body(studentSystemService.getAllStudents());
+    }
+
+    @GetMapping("/groups")
+    public ResponseEntity<List<StudentGroup>> getAllStudentGroups() {
+        return ResponseEntity.ok().body(studentSystemService.getAllStudentGroups());
     }
 }
