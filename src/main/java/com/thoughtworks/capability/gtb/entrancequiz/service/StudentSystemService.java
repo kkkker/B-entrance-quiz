@@ -40,6 +40,7 @@ public class StudentSystemService {
 
     public List<StudentGroup> getAllStudentGroups() {
         List<Student> shuffleStudents = new ArrayList<>(studentsDataBase);
+        // TODO GTB-知识点: + 使用了Collections.shuffle()
         Collections.shuffle(shuffleStudents);
         int studentSize = studentsDataBase.size();
         int groupNumbers = studentSize >= 6 ? GROUP_NUMBERS : studentSize;

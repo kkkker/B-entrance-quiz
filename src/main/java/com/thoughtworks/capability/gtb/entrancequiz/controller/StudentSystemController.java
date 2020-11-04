@@ -15,6 +15,8 @@ import java.util.List;
 @Controller
 public class StudentSystemController {
 
+    // TODO GTB-知识点: - 建议使用构造方法注入bean
+    // TODO GTB-工程实践: - 建议使用private，遵循最小访问原则
     @Autowired
     StudentSystemService studentSystemService;
 
